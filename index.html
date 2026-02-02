@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Turismo en Manta | Aventuras Cartoon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --sky: #9fd8ff;
+        --sea: #3bb9ff;
+        --sand: #ffe39d;
+        --coral: #ff7a7a;
+        --mint: #6be4c3;
+        --ink: #2a2a35;
+        --shadow: rgba(42, 42, 53, 0.2);
+        --purple: #b693ff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Fredoka", system-ui, sans-serif;
+        background: linear-gradient(180deg, var(--sky), #c8f0ff 50%, #f9f6e9 100%);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      header {
+        padding: 32px 16px 80px;
+        text-align: center;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50px;
+        background: var(--sea);
+        border-top: 6px solid #1d7fc2;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 20px;
+        background: white;
+        border: 3px solid var(--ink);
+        border-radius: 999px;
+        box-shadow: 0 6px 0 var(--ink);
+      }
+
+      .brand span {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .hero {
+        margin: 32px auto 0;
+        max-width: 980px;
+        padding: 0 16px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .hero-card {
+        background: white;
+        border: 4px solid var(--ink);
+        border-radius: 32px;
+        padding: 28px;
+        box-shadow: 0 10px 0 var(--ink);
+      }
+
+      .hero-card .highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--purple);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 3px solid var(--ink);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 4vw, 3.4rem);
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .cta {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        padding: 12px 20px;
+        border-radius: 999px;
+        border: 3px solid var(--ink);
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--ink);
+        background: var(--sand);
+        box-shadow: 0 6px 0 var(--ink);
+        transition: transform 0.2s ease;
+      }
+
+      .button.secondary {
+        background: var(--mint);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .mascot {
+        background: radial-gradient(circle at top, #fff9d9, var(--sand));
+        border-radius: 28px;
+        border: 4px dashed var(--ink);
+        padding: 22px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .mascot img {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 22px;
+        border: 4px solid var(--ink);
+        box-shadow: 0 8px 0 var(--ink);
+      }
+
+      .live-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+        padding: 10px 16px;
+        border-radius: 18px;
+        border: 3px solid var(--ink);
+        background: #fff3c4;
+        font-weight: 600;
+      }
+
+      .live-link a {
+        color: var(--ink);
+        text-decoration: underline;
+      }
+
+      .section {
+        padding: 60px 16px;
+      }
+
+      .section h2 {
+        text-align: center;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-bottom: 32px;
+      }
+
+      .cards {
+        display: grid;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background: white;
+        border-radius: 28px;
+        padding: 22px;
+        border: 4px solid var(--ink);
+        box-shadow: 0 8px 0 var(--ink);
+        display: grid;
+        gap: 12px;
+      }
+
+      .card .icon {
+        font-size: 2rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--coral);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-weight: 600;
+        border: 3px solid var(--ink);
+        width: fit-content;
+      }
+
+      .wave-band {
+        background: var(--sea);
+        padding: 30px 16px;
+        border-top: 6px solid #1d7fc2;
+        border-bottom: 6px solid #1d7fc2;
+      }
+
+      .wave-band .grid {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        gap: 16px;
+        color: white;
+      }
+
+      .bubble {
+        background: rgba(255, 255, 255, 0.15);
+        border: 3px solid white;
+        border-radius: 22px;
+        padding: 16px;
+        backdrop-filter: blur(6px);
+      }
+
+      footer {
+        text-align: center;
+        padding: 32px 16px 40px;
+        font-size: 0.95rem;
+      }
+
+      .sky-decor {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .cloud,
+      .sun {
+        position: absolute;
+        border: 4px solid var(--ink);
+        box-shadow: 0 6px 0 var(--ink);
+      }
+
+      .sun {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: #ffd166;
+        top: 20px;
+        right: -20px;
+      }
+
+      .cloud {
+        background: white;
+        border-radius: 999px;
+        padding: 16px 28px;
+      }
+
+      .cloud.one {
+        top: 30px;
+        left: -20px;
+      }
+
+      .cloud.two {
+        top: 120px;
+        right: 120px;
+      }
+
+      @media (min-width: 768px) {
+        .hero {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: center;
+        }
+
+        .cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .wave-band .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="sky-decor">
+        <span class="sun"></span>
+        <span class="cloud one"></span>
+        <span class="cloud two"></span>
+      </div>
+      <div class="brand">
+        <span>🌊 Manta Cartoon Trips</span>
+      </div>
+      <div class="hero">
+        <div class="hero-card">
+          <div class="highlight">🚀 Ruta playera favorita</div>
+          <h1>Turismo en Manta con vibra cartoon y corazón playero</h1>
+          <p>
+            Descubre la energía de la costa manabita con playas doradas, comida de mar fresquita y
+            una agenda de aventuras llenas de color. Manta es un destino que mezcla cultura,
+            naturaleza y diversión bajo el sol.
+          </p>
+          <div class="cta">
+            <a class="button" href="#experiencias">Explora experiencias</a>
+            <a class="button secondary" href="#plan">Arma tu plan</a>
+          </div>
+          <div class="live-link">
+            📞 Contactanos:
+            <a href="">
+              +593 991817323
+              +593 991433792
+            </a>
+          </div>
+        </div>
+        <div class="mascot">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+            alt="Vista del océano en Manta"
+          />
+          <p>
+            La brisa del Pacífico, atardeceres naranjas y un malecón que invita a caminar con helado
+            en mano.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="experiencias" class="section">
+      <h2>Experiencias que no te puedes perder</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🌴</div>
+          <span class="tag">🌴 Playas</span>
+          <h3>San Lorenzo &amp; Tarqui</h3>
+          <p>
+            Relájate en arena suave, practica deportes acuáticos y disfruta de un ambiente súper
+            alegre frente al mar.
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">🍤</div>
+          <span class="tag" style="background: var(--mint);">🍤 Sabores</span>
+          <h3>Ruta gastronómica</h3>
+          <p>
+            Ceviches, corviches y encebollados preparados con la pesca del día. ¡Un festín lleno de
+            sazón manabita!
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">🎉</div>
+          <span class="tag" style="background: #7f9bff;">🎉 Cultura</span>
+          <h3>Malecones y arte local</h3>
+          <p>
+            Visita el Museo del Banco Central y descubre ferias artesanales con piezas únicas hechas
+            por manos locales.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wave-band">
+      <div class="grid">
+        <div class="bubble">
+          <strong>✨ Clima cálido</strong>
+          <p>Promedio de 25°C, perfecto para paseos todo el año.</p>
+        </div>
+        <div class="bubble">
+          <strong>🚲 Movilidad fácil</strong>
+          <p>Rutas cortas para explorar en bici o scooter.</p>
+        </div>
+        <div class="bubble">
+          <strong>🤿 Aventuras marinas</strong>
+          <p>Snorkel, buceo y paseos en lancha para los curiosos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan" class="section">
+      <h2>Arma tu día ideal en Manta</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">☀️</div>
+          <span class="tag" style="background: #ffb347;">☀️ Mañana</span>
+          <p>
+            Desayuna en el malecón con vista al mar y visita los mercados locales para conocer la
+            vida diaria de la ciudad.
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">🏄</div>
+          <span class="tag" style="background: #ffd166;">🏄 Tarde</span>
+          <p>
+            Toma una clase de surf o explora las playas cercanas. Termina con un ceviche tropical.
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">🌅</div>
+          <span class="tag" style="background: #ef476f;">🌅 Noche</span>
+          <p>
+            Atardecer en el mirador y paseo por el malecón iluminado con música en vivo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      Hecho con amor playero para inspirar tu próxima aventura en Manta.
+    </footer>
+  </body>
+</html>
